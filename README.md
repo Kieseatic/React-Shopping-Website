@@ -15,7 +15,7 @@ Copy code
 npm run dev
 Open http://localhost:3000 in your browser to see the result. You can start editing the page by modifying the files in the pages directory. The page auto-updates as you make changes.
 
-API routes can be accessed at http://localhost:3000/api/hello. You can customize these API routes by editing files in the pages/api directory.
+API routes can be accessed at http://localhost:3000/api/products. You can customize these API routes by editing files in the pages/api directory.
 
 **Project Structure**
 

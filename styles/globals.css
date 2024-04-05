@@ -1,31 +1,62 @@
+/* Base styles */
 @tailwind base;
+
+/* Component styles */
 @tailwind components;
+
+/* Utility styles */
 @tailwind utilities;
 
+/* Custom CSS variables */
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-color: #333333; /* Dark gray foreground color */
+  --background-start-color: #fafafa; /* Light gray background start color */
+  --background-end-color: #ffffff; /* White background end color */
 }
 
+/* Container styles */
+.firstDiv {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Background color class */
+.bg {
+  background-color: #7f7f7f; /* Medium gray background */
+}
+
+/* Flexbox container styles */
+.secondDiv {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Image size class */
+.img {
+  width: 100px;
+}
+
+/* Dark mode media query */
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-color: #ffffff; /* White foreground color */
+    --background-start-color: #121212; /* Dark background start color */
+    --background-end-color: #000000; /* Black background end color */
   }
 }
 
+/* Body styles */
 body {
-  color: rgb(var(--foreground-rgb));
+  color: var(--foreground-color);
   background: linear-gradient(
       to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
+      var(--background-end-color)
     )
-    rgb(var(--background-start-rgb));
+    var(--background-start-color);
 }
 
+/* Text balance utility */
 @layer utilities {
   .text-balance {
     text-wrap: balance;

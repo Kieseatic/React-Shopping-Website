@@ -1,13 +1,13 @@
-**Shopping Website
-**
+**Shopping Website**
+
 Developer: Harsh Anilkumar Dugar
 
 **Introduction**
 
 Welcome to the Shopping Website project! This project is built using React and Next.js, providing a modern and efficient platform for online shopping. Whether you're a developer looking to explore the codebase or a user browsing through the website, this documentation will guide you through the project structure, setup, and usage.
 
-**Getting Started
-**
+**Getting Started**
+
 To start the development server, run the following command:
 
 bash
@@ -17,8 +17,8 @@ Open http://localhost:3000 in your browser to see the result. You can start edit
 
 API routes can be accessed at http://localhost:3000/api/hello. You can customize these API routes by editing files in the pages/api directory.
 
-**Project Structure
-**
+**Project Structure**
+
 pages: Contains the main pages of the website.
 pages/api: Contains API routes.
 styles: Contains CSS files for styling.

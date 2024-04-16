@@ -16,11 +16,11 @@ const About = () => {
           </p>
           <p>
             At <strong>The Bulky Store</strong>, we take pride in being the pioneers of the non-existent retail industry. Our team of
-            non-existent experts works tirelessly to curate an exclusive collection of items that you won't find anywhere else.
+            non-existent experts works tirelessly to curate an exclusive collection of items that you won&apos;t find anywhere else.
           </p>
           <p>
             Explore our non-existent aisles and discover the joy of imaginary shopping. Thank you for choosing <strong>The Bulky Store</strong>,
-            where imagination knows no bounds! My name is Harsh DUgar
+            where imagination knows no bounds! My name is Harsh Dugar
           </p>
         </div>
       </div>

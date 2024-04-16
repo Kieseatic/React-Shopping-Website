@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image"; // Import Image component from next/image
 
 import Layout from "../components/layout";
 import { useRouter } from "next/router";
@@ -50,13 +51,16 @@ const Home = () => {
                     <td>{product.id}</td>
                     <td>{product.title}</td>
                     <td>{product.price}</td>
-                    <td>{product.description}</td>
+                    <td>{product.description.replace(/'/g, "&apos;")}</td>
                     <td>{product.category}</td>
                     <td>
-                      <img
+                      {/* Replace <img> element with <Image /> component */}
+                      <Image
                         src={product.image}
                         alt="Product Image"
                         className="product-image"
+                        width={100}
+                        height={100}
                       />
                     </td>
                     <td>{product.rating.rate}</td>

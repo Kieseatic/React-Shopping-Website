@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
-import { useCart } from '../pages/cartContext'; 
+import { useCart } from '../pages/cartContext';
 
 const Layout = ({ children }) => {
-  const { cartItems, cartItemCount, clearCart } = useCart();  
+  const { cartItems, cartItemCount, clearCart } = useCart();
 
-  const handleClearCart = () => {
-    clearCart();
-  };
+  // Clear cart on component unmount
+  useEffect(() => {
+    return () => {
+      clearCart();
+    };
+  }, []);
 
   return (
     <>
@@ -17,7 +20,7 @@ const Layout = ({ children }) => {
             <Link href="/"> The Bulky Store</Link>
           </h1>
           <nav>
-            <Link href="/">| Home</Link> | <Link href="/about">About</Link> | <Link href="/contact">Contact</Link> | 
+            <Link href="/">| Home</Link> | <Link href="/about">About</Link> | <Link href="/contact">Contact</Link> |
             <span className="dashboard-links">
               <Link href="/dashboard">Dashboard</Link> | <Link href="/dashboard/preferences">Preferences</Link>
             </span> |
@@ -32,9 +35,7 @@ const Layout = ({ children }) => {
       </header>
       <hr />
       <main>
-        <div className="container">
-          {children}
-        </div>
+        <div className="container">{children}</div>
         {/* Display cart items */}
         <div>
           <h2>Cart Items</h2>
@@ -46,17 +47,13 @@ const Layout = ({ children }) => {
                     <div>
                       {item.title} - ${item.price.toFixed(2)}
                     </div>
-                    <img
-                      src={item.image}  
-                      alt={item.title}
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}  
-                    />
+                    <img src={item.image} alt={item.title} style={{ maxWidth: '100px', maxHeight: '100px' }} />
                   </li>
                 ))}
               </ul>
-              <button onClick={handleClearCart}>Clear Cart</button>
+              <button onClick={clearCart}>Clear Cart</button>
             </>
-          ) : ( 
+          ) : (
             <p>Your cart is empty.</p>
           )}
         </div>
@@ -67,14 +64,14 @@ const Layout = ({ children }) => {
           background-color: #f8f9fa;
           padding: 10px 0;
         }
-        
+
         .header-container {
           display: flex;
           justify-content: space-between;
           align-items: center;
           padding: 0 20px;
         }
-        
+
         .login-link {
           margin-left: auto;
         }

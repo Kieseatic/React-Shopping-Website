@@ -1,28 +1,28 @@
-import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
 
-import Layout from '../components/layout';
-import { useRouter } from 'next/router';
-import { useCart } from './cartContext';
+import Layout from "../components/layout";
+import { useRouter } from "next/router";
+import { useCart } from "./cartContext";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
   const router = useRouter();
-  const { addToCart, cartItems } = useCart(); 
+  const { addToCart, cartItems } = useCart();
 
   useEffect(() => {
     fetchAndDisplayProduct();
   }, []);
 
   const fetchAndDisplayProduct = () => {
-    var apiEndpoint = 'https://fakestoreapi.com/products';
+    var apiEndpoint = "https://fakestoreapi.com/products";
 
     fetch(apiEndpoint)
       .then((response) => response.json())
       .then((products) => {
         setProducts(products);
       })
-      .catch((error) => console.error('Error fetching data:', error));
+      .catch((error) => console.error("Error fetching data:", error));
   };
 
   return (
@@ -61,10 +61,7 @@ const Home = () => {
                     </td>
                     <td>{product.rating.rate}</td>
                     <td>
-                      <button
-                        type="button"
-                        onClick={() => addToCart(product)}
-                      >
+                      <button type="button" onClick={() => addToCart(product)}>
                         Add to Cart
                       </button>
                     </td>

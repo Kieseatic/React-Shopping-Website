@@ -20,7 +20,7 @@ const About = () => {
           </p>
           <p>
             Explore our non-existent aisles and discover the joy of imaginary shopping. Thank you for choosing <strong>The Bulky Store</strong>,
-            where imagination knows no bounds!
+            where imagination knows no bounds! My name is Harsh DUgar
           </p>
         </div>
       </div>

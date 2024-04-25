@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import '../styles/login.module.css'; // Import CSS file for styling
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -43,6 +42,63 @@ const Login = () => {
                 {error && <div className="error-message">{error}</div>}
                 <button type="button" onClick={handleLogin}>Login</button>
             </form>
+
+            <style jsx>{`
+                .login-container {
+                    width: 400px;
+                    margin: 50px auto;
+                    padding: 30px;
+                    border-radius: 5px;
+                    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+                    background-color: #f9f9f9;
+                }
+
+                .login-container h2 {
+                    text-align: center;
+                    margin-bottom: 20px;
+                    color: #333;
+                }
+
+                .input-group {
+                    margin-bottom: 20px;
+                }
+
+                .input-group label {
+                    display: block;
+                    margin-bottom: 5px;
+                    font-weight: bold;
+                    color: #666;
+                }
+
+                .input-group input {
+                    width: 100%;
+                    padding: 10px;
+                    font-size: 16px;
+                    border: 1px solid #ccc;
+                    border-radius: 3px;
+                }
+
+                .error-message {
+                    color: #ff3333;
+                    margin-bottom: 10px;
+                }
+
+                button {
+                    width: 100%;
+                    padding: 12px;
+                    background-color: #007bff;
+                    color: #fff;
+                    border: none;
+                    border-radius: 3px;
+                    cursor: pointer;
+                    font-size: 16px;
+                    transition: background-color 0.3s ease;
+                }
+
+                button:hover {
+                    background-color: #0056b3;
+                }
+            `}</style>
         </div>
     );
 };

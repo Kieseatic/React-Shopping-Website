@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Layout from '../components/layout';
 import { useRouter } from 'next/router';
-import { useCart } from './cartContext';
+import { useCart } from './cart/cartContext';
 
 const Home = () => {
   const [products, setProducts] = useState([]);

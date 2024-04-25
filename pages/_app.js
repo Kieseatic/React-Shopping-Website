@@ -2,7 +2,7 @@
 import React from 'react';
 import "@/styles/globals.css"
 
-import { CartProvider } from './cartContext';
+import { CartProvider } from './cart/cartContext';
 
 function MyApp({ Component, pageProps }) {
   return (

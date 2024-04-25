@@ -18,6 +18,7 @@ let userSchema = new Schema({
 
 let User;
 
+// connecting with MongoDb
 module.exports.connect = function () {
     return new Promise(function (resolve, reject) {
         let db = mongoose.createConnection(mongoDBConnectionString, {useNewUrlParser: true});
@@ -40,7 +41,7 @@ module.exports.registerUser =  function (userData) {
             reject("Passwords do not match");
         } else {
 
-            bcrypt.hash(userData.password, 10).then(hash=>{ // Hash the password using a Salt that was generated using 10 rounds
+            bcrypt.hash(userData.password, 10).then(hash=>{  //bscypting the password with a salt of 10 rounds.
                 
                 userData.password = hash;
 
@@ -71,7 +72,7 @@ module.exports.checkUser = function (userData) {
             if (users.length == 0) {
                 reject("Unable to find user " + userData.userName);
             } else {
-                bcrypt.compare(userData.password, users[0].password).then((res) => {
+                bcrypt.compare(userData.password, users[0].password).then((res) => { //compares the password with the one in the database
                     if (res === true) {
                         resolve(users[0]);
                     } else {

@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useCart } from '../pages/cartContext';
+import { useCart } from '../pages/cart/cartContext';
 
 const Layout = ({ children }) => {
   const router = useRouter();
